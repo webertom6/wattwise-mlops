@@ -50,4 +50,3 @@ wattwise-mlops-project/
 ## Contributors
 
 This project was developed by a team of 3 for academic purposes. Contributions welcome!
-

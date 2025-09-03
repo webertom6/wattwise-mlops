@@ -10,7 +10,6 @@ client = bigtable.Client(project=PROJECT_ID, admin=True)
 instance = client.instance(INSTANCE_ID)
 table = instance.table(TABLE_ID)
 
-from google.cloud.bigtable import column_family
 
 # Tables à créer
 new_tables = ["input_data", "predictions"]

@@ -14,6 +14,7 @@ input_data_df = pd.read_csv("spain_energy_meteo_data.csv")
 client = bigtable.Client(project="wattwise-459502", admin=True)
 instance = client.instance("wattwise-bigtable")
 
+
 def write_df_to_bigtable(df, table_id, country_code="ES"):
     table = instance.table(table_id)
     if not table.exists():
@@ -32,7 +33,8 @@ def write_df_to_bigtable(df, table_id, country_code="ES"):
             bt_row.set_cell("cf1", col, value)
 
         bt_row.commit()
-        
+
+
 write_df_to_bigtable(predictions_energy_df, table_id="predictions", country_code="ES")
 write_df_to_bigtable(predictions_meteo_df, table_id="predictions", country_code="ES")
 write_df_to_bigtable(input_data_df, table_id="input_data", country_code="ES")
