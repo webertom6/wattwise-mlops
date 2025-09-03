@@ -124,11 +124,10 @@ def data_ingestion(
             filename = f"gs://{bucket_name}/{blob.name}"
             logging.info(f"Processing file: {filename}")
 
-            # XOR such that read only if this a .csv or 
+            # XOR such that read only if this a .csv or
             # is either in directory meteo2 XOR energy2
-            if (
-                filename.endswith(".csv")
-                and (("meteo2" in filename) ^ ("energy2" in filename))
+            if filename.endswith(".csv") and (
+                ("meteo2" in filename) ^ ("energy2" in filename)
             ):
                 try:
                     file_path = filename
