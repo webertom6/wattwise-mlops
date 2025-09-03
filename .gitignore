@@ -1,0 +1,16 @@
+# secrets
+config.py
+
+# settings
+*.json
+
+
+# dataset
+*.zip
+*.csv
+!tests/test_data/*csv
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
